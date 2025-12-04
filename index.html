@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>What is For Dinner</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/main.css"/>
+  </head>
+
+  <body>
+
+    <!-- Header -->
+    <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-md navbar-light">
+        <div class="container">
+          <!-- Logo -->
+          <div class="nav-logo">
+            <div class="logo-icon">
+              <i class="fa-solid fa-utensils"></i>
+            </div>
+            <div>
+              <h1 class="logo-title">What's For Dinner</h1>
+              <p class="logo-subtitle">Your daily meal inspiration</p>
+            </div>
+          </div>
+
+          <!-- Desktop Menu -->
+          <div class="desktop-menu">
+            <button class="nav-btn" id="savedBtn">
+              <i class="fa-solid fa-bookmark"></i>
+            </button>
+            <button class="nav-btn" id="historyBtn">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+            </button>
+            <button class="nav-btn" id="settingsBtn">
+              <i class="fa-solid fa-gear"></i>
+            </button>
+            <img
+              src="./imgs/avatar-4.jpg"
+              alt="Profile"
+              class="user-avatar"
+            />
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button
+            class="mobile-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mobileMenu"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="collapse mobile-menu-collapse" id="mobileMenu">
+          <button class="mobile-menu-item">
+            <i class="fa-solid fa-bookmark"></i> Saved Recipes
+          </button>
+          <button class="mobile-menu-item">
+            <i class="fa-solid fa-clock-rotate-left"></i> Recent
+          </button>
+          <button class="mobile-menu-item">
+            <i class="fa-solid fa-gear"></i> Settings
+          </button>
+          <button class="mobile-menu-item">
+            <img
+              src="https://storage.googleapis.com/uxpilot-auth.appspot.com/avatars/avatar-4.jpg"
+              alt="Profile"
+              class="user-avatar"
+            />
+            Profile
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Section -->
+    <!-- Main Section -->
+    <section>
+        <div class="container">
+          <div class="recipe-card">
+            <!-- Image Section -->
+            <div class="recipe-img-section">
+              <img src="" alt="Recipe" class="recipe-img" id="recipeImg" />
+  
+              <div class="recipe-rating" id="recipeRating">
+                <i class="fa fa-star"></i>
+                <span class="rating-value">4.5</span>
+                <span class="rating-count">(156)</span>
+              </div>
+  
+              <div class="recipe-info">
+                <div class="info-item">
+                  <i class="fa fa-clock prep-icon"></i>
+                  <div class="info-label">Prep Time</div>
+                  <div class="info-value" id="prepTime">20 min</div>
+                </div>
+                <div class="info-item">
+                  <i class="fa fa-fire-burner cook-icon"></i>
+                  <div class="info-label">Cook Time</div>
+                  <div class="info-value" id="cookTime">35 min</div>
+                </div>
+                <div class="info-item">
+                  <i class="fa fa-users"></i>
+                  <div class="info-label">Servings</div>
+                  <div class="info-value" id="servings">2</div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- Content Section -->
+            <div class="recipe-content">
+              <!-- Recipe Header -->
+              <div class="recipe-header">
+                <div>
+                  <div class="tags" id="recipeTags">
+                    <span class="tag easy">Easy</span>
+                    <span class="tag cuisine">Mediterranean</span>
+                  </div>
+                  <h2 class="recipe-title" id="recipeName">
+                    Mediterranean Quinoa Bowl
+                  </h2>
+                  <p class="recipe-desc" id="recipeDesc">
+                    Healthy bowl with quinoa, vegetables, and tahini dressing
+                  </p>
+                </div>
+              </div>
+  
+              <!-- Warning -->
+              <div class="time-warning" id="timeWarning">
+                <i class="fa fa-triangle-exclamation"></i>
+                <div>
+                  <div class="warning-title">Extended Preparation Time</div>
+                  <div class="warning-text">
+                    This recipe requires more than 45 minutes to prepare.
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Tabs -->
+              <div class="tabs-container">
+                <div class="tabs">
+                  <button class="tab-btn active" data-tab="ingredients">
+                    <i class="fa fa-list-check"></i> Ingredients
+                  </button>
+                  <button class="tab-btn" data-tab="instructions">
+                    <i class="fa fa-book-open"></i> Instructions
+                  </button>
+                  <button class="tab-btn" data-tab="nutrition">
+                    <i class="fa fa-chart-pie"></i> Nutrition
+                  </button>
+                  <button class="tab-btn" data-tab="tips">
+                    <i class="fa fa-lightbulb"></i> Tips
+                  </button>
+                </div>
+  
+                <!-- Tab Content -->
+                <div class="tab-content">
+                  <!-- Ingredients -->
+                  <div class="tab-pane active" id="ingredientsTab">
+                    <ul class="ingredients" id="ingredientsList"></ul>
+                  </div>
+  
+                  <!-- Instructions -->
+                  <div class="tab-pane" id="instructionsTab">
+                    <div class="instructions" id="instructionsList"></div>
+                  </div>
+  
+                  <!-- Nutrition -->
+                  <div class="tab-pane" id="nutritionTab">
+                    <div class="nutrition-grid">
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-fire"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Calories</span>
+                          <span class="nutri-value" id="caloriesValue"></span>
+                        </div>
+                      </div>
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-dumbbell"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Protein</span>
+                          <span class="nutri-value" id="proteinValue"></span>
+                        </div>
+                      </div>
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-wheat-awn"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Carbs</span>
+                          <span class="nutri-value" id="carbsValue"></span>
+                        </div>
+                      </div>
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-droplet"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Fat</span>
+                          <span class="nutri-value" id="fatValue"></span>
+                        </div>
+                      </div>
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-seedling"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Fiber</span>
+                          <span class="nutri-value" id="fiberValue"></span>
+                        </div>
+                      </div>
+                      <div class="nutri-card">
+                        <div class="nutri-icon">
+                          <i class="fa fa-cube"></i>
+                        </div>
+                        <div class="nutri-text">
+                          <span class="nutri-label">Sodium</span>
+                          <span class="nutri-value" id="sodiumValue"></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <!-- Tips -->
+                  <div class="tab-pane" id="tipsTab">
+                    <div class="tips" id="tipsList"></div>
+                  </div>
+                </div>
+              </div>
+  
+              <!-- Try Button -->
+              <div class="footer">
+                <button class="try-btn" id="tryBtn">
+                  <i class="fa fa-rotate"></i> Try Another Recipe
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </section>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
